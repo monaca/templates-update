@@ -7,7 +7,7 @@ function updateOnsenui {
   for D in */; do
     if [ $D != "node_modules/" ]; then
       echo "${D}${libPath}";
-      (cd $D && git pull)
+      (cd $D && git checkout master && git pull)
       rm -rf "${D}${libPath}";
       cp -r "node_modules/onsenui" "${D}${libPath}";
       (cd $D && git add -A && git commit -m "Update onsenui lib.")
@@ -22,6 +22,7 @@ function updateAngular {
   for D in */; do
     if [[ $D == *"-angular1-"* ]]; then
       echo "${D}${libPath}";
+      (cd $D && git checkout master && git pull)
       rm -rf "${D}${libPath}";
       cp -r "node_modules/angular" "${D}${libPath}";
       (cd $D && git add -A && git commit -m "Update angular lib.")
