@@ -2,7 +2,7 @@
 
 function updateOnsenui {
   libPath="www/lib/onsenui";
-  npm install onsenui
+  yarn add onsenui
 
   for D in */; do
     if [ $D != "node_modules/" ]; then
@@ -17,7 +17,7 @@ function updateOnsenui {
 
 function updateAngular {
   libPath="www/lib/angular";
-  npm install angular
+  yarn add angular
 
   for D in */; do
     if [[ $D == *"-angular1-"* ]]; then
